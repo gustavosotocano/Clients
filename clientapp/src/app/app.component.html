@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-first">
+    <div class="col-md-3">
+      <ul>
+        <li>  <a routerLink="/clients" class="ui-static-link">Clients</a></li>
+        <li> <a class="ui-static-link">Clients history</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-last">
+    <div >
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+          <li class="list-inline-item">
+
+          </li>
+          </ul>col-first
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,82 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form #userForm="ngForm">
+      <div class="form-group">
+        <label for="bussinessId">Name</label>
+        <input type="text" [(ngModel)]="client.bussinessId"
+               class="form-control"
+               id="bussinessId"
+               readonly
+               name="bussinessId"
+               placeholder="Name"
+               required #name="ngModel">
+      </div>
+      <div>
+      <label for="sharedKey">Shared Key</label>
+      <input type="text" [(ngModel)]="client.sharedKey"
+             class="form-control"
+             id="sharedKey"
+             readonly
+             name="sharedKey"
+             placeholder="shared Key"
+             required #name="ngModel">
+  </div>
+      <div  class="alert alert-danger" *ngIf="userForm.submitted && name.invalid">Name is required</div>
+      <div>
+        <label for="phone">Phone</label>
+        <input type="text" [(ngModel)]="client.phone"
+               class="form-control"
+               id="phone"
+               readonly
+               mask="(000) 000-0000"
+               name="phone"
+               placeholder="Phone"
+               required #phone="ngModel">
+      </div>
+      <div  class="alert alert-danger" *ngIf="userForm.submitted && phone.invalid">phone is required</div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" [(ngModel)]="client.email"
+               class="form-control"
+               id="email"
+               readonly
+               name="email"
+               [email]="true"
+               placeholder="Email address"
+               required #email="ngModel">
+        <div  class="alert alert-danger" *ngIf="userForm.submitted && (email.invalid && ( email.dirty ||  email.touched))">Email is required</div>
+        <div *ngIf="email.invalid && ( email.dirty ||  email.touched)">
+
+          <div class="alert alert-danger"  >Invalid email format.</div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="startDate">Start date</label>
+        <input type="text" [(ngModel)]="client.started"
+               class="form-control"
+               id="startDate"
+               name="startDate"
+               readonly
+               dataformatas="yyyy-MM-dd"
+               placeholder="Start date"
+               required  >
+      </div>
+      <div class="form-group">
+        <label for="endDate">End date</label>
+        <input type="text" [(ngModel)]="client.ended"
+               class="form-control"
+               id="endDate"
+               name="endDate"
+               readonly
+               placeholder="End date "
+               dataformatas="yyyy-MM-dd"
+               >
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+

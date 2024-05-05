@@ -1,0 +1,61 @@
+
+
+<div class="card my-5">
+
+  <div class="card-body">
+
+    <ul class="text-center list-inline py-3">
+      <li class="list-inline-item">
+        <a routerLink="/clients" class="btn btn-info">List Users</a>
+      </li>
+      <li class="list-inline-item">
+        <a (click)="openFormPopupNew()" class="btn btn-info">Add User</a>
+      </li>
+    </ul>
+
+    <div>
+    <input type="text"
+           id="search"
+           name="sharedKey"
+           [(ngModel)]="sharedKey"
+
+           placeholder="Enter search term">
+    <button (click)="searchClient()">Search</button>
+  </div>
+  </div>
+<app-popup-query-form *ngIf="showPopup" [client] =clients >
+
+</app-popup-query-form>
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <p >{{ errorMessage }}</p>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Shared Key</th>
+        <th scope="col">Business ID</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Data Added</th>
+        <th scope="col"> <img src="./pencil.png" alt="Imagen"   width="15" height="15"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clienteDtos">
+
+        <td>{{ client.sharedKey }}</td>
+        <td>{{ client.bussinessId }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.phone }}</td>
+        <td>{{ client.added }}</td>
+
+        <td><button (click)="openFormPopup(client)" >
+          <img src="./pencil.png" alt="Imagen" width="15" height="15">
+        </button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,72 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" >
+      <div class="form-group">
+        <label for="bussinessId">Name</label>
+        <input type="text" [(ngModel)]="client.bussinessId"
+               class="form-control"
+               id="bussinessId"
+               name="bussinessId"
+               placeholder="Enter your name"
+               required #name="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="userForm.submitted && name.invalid">Name is required</div>
+      <div>
+        <label for="phone">Phone</label>
+        <input type="text" [(ngModel)]="client.phone"
+               class="form-control"
+               id="phone"
+               name="phone"
+               mask="(000) 000-0000"
+               placeholder="Enter your Phone"
+               required #phone="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="userForm.submitted && phone.invalid">phone is required</div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" [(ngModel)]="client.email"
+               class="form-control"
+               id="email"
+               name="email"
+               [email]="true"
+               placeholder="Enter your email address"
+               required #email="ngModel">
+
+        <div *ngIf="email.invalid && ( email.dirty ||  email.touched)">
+          <div class="alert alert-danger" >Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="startDate">Start date</label>
+        <input type="date" [(ngModel)]="client.started"
+               class="form-control"
+               id="startDate"
+               name="startDate"
+               placeholder="Start date"
+               required
+               #startDate="ngModel">
+        <div class="alert alert-danger" *ngIf="userForm.submitted && startDate.invalid">Start date is required</div>
+      </div>
+      <div class="form-group">
+        <label for="endDate">End date</label>
+        <input type="date" [(ngModel)]="client.ended"
+               class="form-control"
+               id="endDate"
+               name="endDate"
+               placeholder="Enter your End date "
+               required #endDate="ngModel">
+        <div class="alert alert-danger" *ngIf="userForm.submitted && endDate.invalid">End date is required</div>
+        <div class="alert alert-danger" *ngIf="startDate && endDate && startDate > endDate">
+
+          <div class="alert alert-danger"  >Start date is Greater than End date..</div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        <p >{{ errorMessage }}</p>
+      </div>
+    </form>
+  </div>
+</div>
