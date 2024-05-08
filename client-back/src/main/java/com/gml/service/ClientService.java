@@ -25,7 +25,6 @@ public class ClientService implements ClientServiceI {
     private final ClientJpaRepository clientJpaRepository;
 
 
-
     public ClientService(ClientJpaRepository clientJpaRepository) {
         this.clientJpaRepository = clientJpaRepository;
     }
@@ -35,7 +34,7 @@ public class ClientService implements ClientServiceI {
 
 
         return clientJpaRepository.findAll().stream()
-                .map(this::toClientDto)
+                .map(Utils::toClientDto)
                 .collect(Collectors.toList());
     }
 
@@ -45,10 +44,10 @@ public class ClientService implements ClientServiceI {
 
         var clients = clientJpaRepository.findByEmail(email);
         if (Objects.isNull(clients)) {
-            throw new ResourceNotFoundException( "001", "Client Not Found");
+            throw new ResourceNotFoundException("001", "Client Not Found");
         }
         var personLst = clientJpaRepository.findByEmail(email);
-        return toClientDto(personLst);
+        return Utils.toClientDto(personLst);
                 /*.stream()
                 .map(this::toClientDto)
                 .collect(Collectors.toList());*/
@@ -60,13 +59,11 @@ public class ClientService implements ClientServiceI {
 
         var clients = clientJpaRepository.findById(sharedKey);
         if (clients.isEmpty()) {
-            throw new ResourceNotFoundException( "V-102", "Cliente No Encontrado");
+            throw new ResourceNotFoundException("V-102", "Cliente No Encontrado");
         }
 
-        return toClientDto(clients.get());
-                /*.stream()
-                .map(this::toClientDto)
-                .collect(Collectors.toList());*/
+        return Utils.toClientDto(clients.get());
+
     }
 
     @Override
@@ -77,18 +74,18 @@ public class ClientService implements ClientServiceI {
         if (Objects.nonNull(clients)) {
             throw new RequestException("004", "Client is already created");
         }
-        String[]names = clienteDto.getBussinessId().split(" ");
-        String lastName="";
-        if(names.length==1){
-          lastName  = names[0];
-        }else if(names.length==2){
-            lastName  = names[1];
-        }else if(names.length>2){
-            lastName  = names[2];
+        String[] names = clienteDto.getBussinessId().split(" ");
+        String lastName = "";
+        if (names.length == 1) {
+            lastName = names[0];
+        } else if (names.length == 2) {
+            lastName = names[1];
+        } else if (names.length > 2) {
+            lastName = names[2];
         }
-         clienteDto.setAdded(new Date());
-        String initial= names[0].substring(0, 1);
-        clienteDto.setSharedKey((initial+lastName).toLowerCase(Locale.ROOT));
+        clienteDto.setAdded(new Date());
+        String initial = names[0].substring(0, 1);
+        clienteDto.setSharedKey((initial + lastName).toLowerCase(Locale.ROOT));
 
         return clientJpaRepository.save(Utils.toClient(clienteDto));
     }
@@ -106,42 +103,12 @@ public class ClientService implements ClientServiceI {
         var clientEmail = clientJpaRepository
                 .findByEmail(clienteDto.getEmail());
 
-        if(Objects.nonNull(clientEmail) && (!client.get().getSharedKey().equals(clientEmail.getSharedKey()))){
+        if (Objects.nonNull(clientEmail) && (!client.get().getSharedKey().equals(clientEmail.getSharedKey()))) {
             throw new RequestException("006", "Email belongs to another client");
         }
 
 
-        return clientJpaRepository.save(Utils.toClientUpdate(clienteDto,client.get()));
+        return clientJpaRepository.save(Utils.toClientUpdate(clienteDto, client.get()));
     }
 
-
-
-    private ClienteDto toClientDto(Client client) {
-
-
-        return ClienteDto.builder()
-                .sharedKey(client.getSharedKey())
-                .bussinessId(client.getBussinessId())
-                .email(client.getEmail())
-                .phone(client.getPhone())
-                .added(changeFormatDate(client.getAdded()))
-                .started(changeFormatDate(client.getStarted()))
-                .ended(client.getEnded())
-
-                .build();
-    }
-
-    private Date changeFormatDate(Date date) {
-
-        SimpleDateFormat outputFormat = new SimpleDateFormat("MMM-dd-yyyy");
-
-        try {
-            date = outputFormat.parse(date.toString());
-            log.error("Parsed Date: {}", date);
-        } catch (ParseException e) {
-            log.error("Error parsing date: {} " , e.getMessage());
-        }
-
-return date;
-    }
 }
