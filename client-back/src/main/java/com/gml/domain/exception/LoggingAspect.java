@@ -1,9 +1,8 @@
-package com.gml.exception;
+package com.gml.domain.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -11,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Pointcut("execution(* com.gml.controller.*.*(..))"+
-              "execution(* com.gml.service.*.*(..))" +
+    @Pointcut("execution(* com.gml.*.*(..))"+
+
               "execution(* com.gml.repository.*.*(..))") // Pointcut example
     public void allPackageMethods() {}
 

@@ -1,8 +1,8 @@
-package com.gml.entity;
+package com.gml.infrastructure.adapters.outbound.persistence.entity;
 
 
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import jakarta.persistence.Id;
@@ -13,10 +13,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "Client")
 @Builder
-@Setter
-@Getter
-public class Client {
+public class ClientEntity {
     @Id
     private String sharedKey;
     private String email;

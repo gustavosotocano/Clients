@@ -1,4 +1,4 @@
-package com.gml.exception;
+package com.gml.domain.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -6,10 +6,10 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class RequestException extends RuntimeException {
+public class ResourceNotFoundException extends RuntimeException {
 public String code;
 public String  message;
- public RequestException(String code, String message) {
+ public ResourceNotFoundException(String code,String message) {
      super();
      this.message=message;
      this.code = code;
