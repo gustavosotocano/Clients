@@ -1,23 +1,16 @@
 package com.gml.implementation;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gml.application.port.inbound.CreateClientUseCase;
 import com.gml.application.port.inbound.GetClientUseCase;
 import com.gml.domain.model.Client;
 import com.gml.infrastructure.adapters.inbound.rest.ClientRestAdapter;
-import com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapper;
 import com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse;
 import com.gml.util.Util;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mapstruct.factory.Mappers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MvcResult;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,20 +18,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
-//@WebMvcTest
 public class ClientControllerTest {
-
-
-/*@Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
-    private ClientRepository clientJpaRepository;
-*/
     private final GetClientUseCase getClientUseCase = mock(GetClientUseCase.class);
     private final CreateClientUseCase createClientUseCase = mock(CreateClientUseCase.class);
-   // private final ClientRestMapper clientRestMapper = Mappers.getMapper(ClientRestMapper.class);
 
     private final ClientRestAdapter clientRestAdapter = new ClientRestAdapter(createClientUseCase, getClientUseCase);
     @Test
@@ -78,13 +60,7 @@ public class ClientControllerTest {
 
         return clients;
     }
-/*
-    private List<GetClientResponse> stringToObject(MvcResult result) throws JsonProcessingException, UnsupportedEncodingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<>() {
-        });
-    }
-*/
+
     @Test
     public void findAllNotFoundTest() {
 
