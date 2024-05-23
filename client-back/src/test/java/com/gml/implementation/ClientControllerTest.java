@@ -22,12 +22,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 
 //@WebMvcTest
@@ -42,7 +38,7 @@ public class ClientControllerTest {
 */
     private final GetClientUseCase getClientUseCase = mock(GetClientUseCase.class);
     private final CreateClientUseCase createClientUseCase = mock(CreateClientUseCase.class);
-    private final ClientRestMapper clientRestMapper = Mappers.getMapper(ClientRestMapper.class);
+   // private final ClientRestMapper clientRestMapper = Mappers.getMapper(ClientRestMapper.class);
 
     private final ClientRestAdapter clientRestAdapter = new ClientRestAdapter(createClientUseCase, getClientUseCase);
     @Test
@@ -64,7 +60,10 @@ public class ClientControllerTest {
 
                 () -> assertEquals(HttpStatus.OK, testResponse.getStatusCode()),
                 () -> assertNotNull(testResponse.getBody()),
-                () -> assertEquals(objeto.size(), 1, "Cantidad debe ser 1"),
+                () -> {
+                    assert objeto != null;
+                    assertEquals(objeto.size(), 1, "Cantidad debe ser 1");
+                },
                 () -> assertEquals(objeto.get(0).bussinessId() , "John Doe", "Business Id no es igual"));
     }
 
@@ -79,15 +78,15 @@ public class ClientControllerTest {
 
         return clients;
     }
-
+/*
     private List<GetClientResponse> stringToObject(MvcResult result) throws JsonProcessingException, UnsupportedEncodingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<>() {
         });
     }
-
+*/
     @Test
-    public void findAllNotFoundTest() throws Exception {
+    public void findAllNotFoundTest() {
 
         //GIVEN
         when(getClientUseCase.getClientByAll()).thenReturn(Collections.emptyList());
@@ -101,7 +100,7 @@ public class ClientControllerTest {
         Assertions.assertAll("test",
 
                 () -> assertEquals(HttpStatus.OK, testResponse.getStatusCode()),
-                () -> assertEquals(true, testResponse.getStatusCode().is2xxSuccessful(), "Esperamos una lista vacia"));
+                () -> assertTrue(testResponse.getStatusCode().is2xxSuccessful(), "Esperamos una lista vacia"));
     }
 /*
     @Test
