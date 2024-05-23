@@ -46,7 +46,10 @@ public class ClientControllerTest {
                     assert objeto != null;
                     assertEquals(objeto.size(), 1, "Cantidad debe ser 1");
                 },
-                () -> assertEquals(objeto.get(0).bussinessId() , "John Doe", "Business Id no es igual"));
+                () -> {
+                    assert objeto != null;
+                    assertEquals(objeto.get(0).bussinessId() , "John Doe", "Business Id no es igual");
+                });
     }
 
 
