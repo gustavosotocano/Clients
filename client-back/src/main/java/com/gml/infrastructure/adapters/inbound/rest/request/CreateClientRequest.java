@@ -1,6 +1,6 @@
 package com.gml.infrastructure.adapters.inbound.rest.request;
 
-import com.gml.infrastructure.client.unique.UniqueEmail;
+import com.gml.domain.exception.anotation.UniqueEmail;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;

@@ -2,7 +2,7 @@ package com.gml.domain.annotation;
 
 import com.gml.application.port.inbound.GetClientUseCase;
 import com.gml.domain.model.Client;
-import com.gml.infrastructure.client.unique.UniqueEmail;
+import com.gml.domain.exception.anotation.UniqueEmail;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.stereotype.Component;

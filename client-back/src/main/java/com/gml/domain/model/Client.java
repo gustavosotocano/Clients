@@ -1,6 +1,6 @@
 package com.gml.domain.model;
 
-import com.gml.infrastructure.client.unique.UniqueEmail;
+import com.gml.domain.exception.anotation.UniqueEmail;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.gml.infrastructure.client.unique;
+package com.gml.domain.exception.anotation;
 
 import com.gml.domain.annotation.UniqueEmailValidator;
 import jakarta.validation.Constraint;
