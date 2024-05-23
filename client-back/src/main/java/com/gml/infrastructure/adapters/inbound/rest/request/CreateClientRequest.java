@@ -2,9 +2,10 @@ package com.gml.infrastructure.adapters.inbound.rest.request;
 
 import com.gml.domain.exception.anotation.UniqueEmail;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 
 import java.util.Date;
-
+@Builder
 public record CreateClientRequest (
 
         String sharedKey,

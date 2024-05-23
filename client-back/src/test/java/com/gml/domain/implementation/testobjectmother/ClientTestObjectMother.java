@@ -1,14 +1,14 @@
-package com.gml.implementation.testobjectmother;
+package com.gml.domain.implementation.testobjectmother;
 
 import com.gml.domain.model.Client;
 
 public class ClientTestObjectMother {
     public static Client aClient() {
         return Client.builder()
-                .sharedKey("1L")
+                .sharedKey("gsoto")
                 .bussinessId("name")
                 .email("description@gmail.com")
-                .phone("453453454")
+                .phone("34567776")
                 .build();
     }
 

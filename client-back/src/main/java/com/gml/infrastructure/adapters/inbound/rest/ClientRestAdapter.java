@@ -28,7 +28,7 @@ public class ClientRestAdapter {
     private final ClientRestMapper clientRestMapper = Mappers.getMapper(ClientRestMapper.class);
 
     @PostMapping("/v1/client")
-    public ResponseEntity<CreateClientResponse> addClient(@Valid @RequestBody CreateClientRequest createClientRequest) {
+    public ResponseEntity<CreateClientResponse> createClient(@Valid @RequestBody CreateClientRequest createClientRequest) {
 
         Client client = createClientUseCase.createClient(clientRestMapper.toModel(createClientRequest));
 

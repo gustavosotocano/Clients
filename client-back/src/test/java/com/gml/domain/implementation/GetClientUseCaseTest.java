@@ -1,4 +1,4 @@
-package com.gml.implementation;
+package com.gml.domain.implementation;
 
 import com.gml.application.port.inbound.CreateClientUseCase;
 import com.gml.application.port.inbound.GetClientUseCase;
@@ -18,7 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class ClientControllerTest {
+public class GetClientUseCaseTest {
     private final GetClientUseCase getClientUseCase = mock(GetClientUseCase.class);
     private final CreateClientUseCase createClientUseCase = mock(CreateClientUseCase.class);
 
@@ -51,7 +51,6 @@ public class ClientControllerTest {
                     assertEquals(objeto.get(0).bussinessId() , "John Doe", "Business Id no es igual");
                 });
     }
-
 
     private List<Client> getClientDtos() {
         List<Client> clients = new ArrayList<>();

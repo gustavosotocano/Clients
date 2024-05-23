@@ -1,17 +1,17 @@
-package com.gml;
+package com.gml.domain.implementation;
 
 import com.gml.domain.model.Client;
-import com.gml.implementation.testobjectmother.ClientTestObjectMother;
+import com.gml.domain.implementation.testobjectmother.ClientTestObjectMother;
 import com.gml.infrastructure.adapters.outbound.persistence.ClientPersistenceAdapter;
 import com.gml.infrastructure.adapters.outbound.persistence.repository.ClientRepository;
-import com.gml.persistence.testobjectmother.ClientEntityTestObjectMother;
+import com.gml.domain.implementation.testobjectmother.ClientEntityTestObjectMother;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class ClientPersistenceTest {
+public class CreateClientUseCaseTest {
     private final ClientRepository clientRepository = mock(ClientRepository.class);
     private final ClientPersistenceAdapter clientPersistenceAdapterTest = new ClientPersistenceAdapter(clientRepository);
 
