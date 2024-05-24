@@ -32,7 +32,7 @@ public class ClientRestAdapterTest {
     private static final String SHARED_KEY="rtert";
 
     @Test
-    public void createFruitTest() {
+    public void createClientTest() {
         //GIVEN
         when(createFruitUseCase.createClient(fruitRestMapper.toModel(CreateClientRequestTestObjectMother.aCreateClientRequest())))
                 .thenReturn(ClientTestObjectMother.aClient());
@@ -49,7 +49,7 @@ public class ClientRestAdapterTest {
     }
 
     @Test
-    public void getFruitTest() {
+    public void getClientTest() {
         //GIVEN
         when(getClientUseCase.getClientById(SHARED_KEY)).thenReturn(ClientTestObjectMother.aClient());
 

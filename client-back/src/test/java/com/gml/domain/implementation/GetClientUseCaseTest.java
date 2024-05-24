@@ -2,6 +2,7 @@ package com.gml.domain.implementation;
 
 import com.gml.application.port.inbound.CreateClientUseCase;
 import com.gml.application.port.inbound.GetClientUseCase;
+import com.gml.application.port.inbound.UpdateClientUseCase;
 import com.gml.domain.model.Client;
 import com.gml.infrastructure.adapters.inbound.rest.ClientRestAdapter;
 import com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse;
@@ -21,8 +22,9 @@ import static org.mockito.Mockito.*;
 public class GetClientUseCaseTest {
     private final GetClientUseCase getClientUseCase = mock(GetClientUseCase.class);
     private final CreateClientUseCase createClientUseCase = mock(CreateClientUseCase.class);
+    private final UpdateClientUseCase updateClientUseCase= mock(UpdateClientUseCase.class);
 
-    private final ClientRestAdapter clientRestAdapter = new ClientRestAdapter(createClientUseCase, getClientUseCase);
+    private final ClientRestAdapter clientRestAdapter = new ClientRestAdapter(createClientUseCase, updateClientUseCase,getClientUseCase);
     @Test
     public void findAllTest()   {
 
