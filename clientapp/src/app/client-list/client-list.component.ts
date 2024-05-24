@@ -4,6 +4,7 @@ import {ClientService} from "../service/client.service";
 import {PopupFormComponent} from "../popup-form/popup-form.component";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupAddFormComponent} from "../popup-add-form/popup-add-form.component";
+import {JsoncvsComponent} from "../jsoncvs/jsoncvs.component"
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
@@ -48,6 +49,14 @@ location.reload();
     });
   }
 
+  exportCSV(): void {
+    this.clientService.findAll().subscribe((data: ClienteDto[] ) => {
+      this.clienteDtos = data;
+      this.clientService.convertJsonToCsv(this.clienteDtos)
+
+    });
+
+  }
 
  searchClient(){
 

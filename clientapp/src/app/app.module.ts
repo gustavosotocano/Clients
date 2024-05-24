@@ -12,6 +12,7 @@ import {MatIconButton} from "@angular/material/button";
 import {PopupAddFormComponent} from './popup-add-form/popup-add-form.component';
 import {NgxMaskDirective, provideNgxMask} from 'ngx-mask';
 import {PopupQueryFormComponent} from './popup-query-form/popup-query-form.component';
+import { JsoncvsComponent } from './jsoncvs/jsoncvs.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {PopupQueryFormComponent} from './popup-query-form/popup-query-form.compo
     PopupFormComponent,
     PopupAddFormComponent,
     PopupQueryFormComponent,
+    JsoncvsComponent,
 
   ],
   imports: [

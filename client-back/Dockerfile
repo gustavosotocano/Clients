@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:17
 VOLUME /tmp
 EXPOSE 8090
 ARG JAR_FILE=target/clients-0.0.1.jar
