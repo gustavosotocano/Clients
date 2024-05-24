@@ -1,0 +1,4 @@
+name: "Clients"
+appmap_dir: "../tmp/appmap"
+packages:
+- path: "com.gml"

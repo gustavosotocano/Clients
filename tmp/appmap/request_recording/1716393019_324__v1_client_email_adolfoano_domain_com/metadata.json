@@ -1,0 +1,23 @@
+{
+  "name": "GET /v1/client/email/adolfoano@domain.com (200) - 10:50:19.324",
+  "app": "Clients",
+  "language": {
+    "name": "java",
+    "version": "21.0.3+9-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "request_recording",
+    "type": "requests"
+  },
+  "recording": {},
+  "git": {
+    "repository": "git@github.com:gustavosotocano/Clients.git",
+    "branch": "addjwt",
+    "commit": "db7135fd6f99d064d590aa55b4aabbb8626f5aff"
+  }
+}

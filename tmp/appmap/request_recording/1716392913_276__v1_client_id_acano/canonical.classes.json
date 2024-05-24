@@ -1,0 +1,9 @@
+[
+  "com/gml/domain/implementation/GetClientUseCaseImpl",
+  "com/gml/domain/model/Client$ClientBuilder",
+  "com/gml/infrastructure/adapters/inbound/rest/ClientRestAdapter",
+  "com/gml/infrastructure/adapters/inbound/rest/mapper/ClientRestMapperImpl",
+  "com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse$GetClientResponseBuilder",
+  "com/gml/infrastructure/adapters/outbound/persistence/ClientPersistenceAdapter",
+  "com/gml/infrastructure/adapters/outbound/persistence/mapper/ClientPersistenceMapperImpl"
+]

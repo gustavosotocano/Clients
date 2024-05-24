@@ -1,0 +1,22 @@
+[
+  {
+    "route": "GET /v1/client",
+    "parameters": "()",
+    "status": 200
+  },
+  {
+    "route": "GET /v1/client/email/{email}",
+    "parameters": "()",
+    "status": 200
+  },
+  {
+    "route": "GET /v1/client/id/{id}",
+    "parameters": "()",
+    "status": 200
+  },
+  {
+    "route": "POST /v1/client",
+    "parameters": "()",
+    "status": 201
+  }
+]

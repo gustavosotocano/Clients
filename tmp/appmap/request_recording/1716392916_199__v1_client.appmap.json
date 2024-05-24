@@ -1,0 +1,946 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "241",
+          "postman-token": "b359af0f-8418-43ba-a725-518b4d64dbd3",
+          "host": "localhost:8090",
+          "content-type": "application/json",
+          "connection": "keep-alive",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.39.0",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/v1/client",
+        "path_info": "/v1/client",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 204
+    },
+    {
+      "event": "call",
+      "id": 2,
+      "sql_query": {
+        "database_type": "H2",
+        "sql": "select ce1_0.shared_key,ce1_0.added,ce1_0.bussiness_id,ce1_0.email,ce1_0.ended,ce1_0.phone,ce1_0.started,ce1_0.updated from client ce1_0"
+      },
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000262034,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.outbound.persistence.mapper.ClientPersistenceMapperImpl",
+      "event": "call",
+      "id": 4,
+      "lineno": 35,
+      "method_id": "toModel",
+      "parameters": [
+        {
+          "class": "com.gml.infrastructure.adapters.outbound.persistence.entity.ClientEntity",
+          "kind": "req",
+          "name": "clientEntity",
+          "object_id": 348857410,
+          "value": "ClientEntity(sharedKey=acano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0, bussinessId=adolfo a cano, updated=null)"
+        }
+      ],
+      "path": "com/gml/infrastructure/adapters/outbound/persistence/mapper/ClientPersistenceMapperImpl.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.outbound.persistence.mapper.ClientPersistenceMapperImpl",
+        "object_id": 208058683,
+        "value": "com.gml.infrastructure.adapters.outbound.persistence.mapper.ClientPersistenceMapperImpl@c66b93b"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 5,
+      "lineno": 9,
+      "method_id": "sharedKey",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "sharedKey",
+          "object_id": 486591074,
+          "value": "acano"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=null, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.000034429,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=null, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 7,
+      "lineno": 9,
+      "method_id": "bussinessId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "bussinessId",
+          "object_id": 648281948,
+          "value": "adolfo a cano"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000053663,
+      "event": "return",
+      "id": 8,
+      "parent_id": 7,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 9,
+      "lineno": 9,
+      "method_id": "email",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "email",
+          "object_id": 988336009,
+          "value": "adolfoano@domain.com"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.000004648,
+      "event": "return",
+      "id": 10,
+      "parent_id": 9,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 11,
+      "lineno": 9,
+      "method_id": "phone",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "phone",
+          "object_id": 1125616637,
+          "value": "adolfo"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000066839,
+      "event": "return",
+      "id": 12,
+      "parent_id": 11,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 13,
+      "lineno": 9,
+      "method_id": "added",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "added",
+          "object_id": 1108983926,
+          "value": "2024-05-22 10:48:29.763"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000044288,
+      "event": "return",
+      "id": 14,
+      "parent_id": 13,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 15,
+      "lineno": 9,
+      "method_id": "started",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "started",
+          "object_id": 255657283,
+          "value": "2024-05-24 19:00:00.0"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000044244,
+      "event": "return",
+      "id": 16,
+      "parent_id": 15,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 17,
+      "lineno": 9,
+      "method_id": "ended",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "ended",
+          "object_id": 1723641522,
+          "value": "2024-05-24 19:00:00.0"
+        }
+      ],
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000044618,
+      "event": "return",
+      "id": 18,
+      "parent_id": 17,
+      "return_value": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.domain.model.Client$ClientBuilder",
+      "event": "call",
+      "id": 19,
+      "lineno": 9,
+      "method_id": "build",
+      "path": "src/main/java/com/gml/domain/model/Client.java",
+      "receiver": {
+        "class": "com.gml.domain.model.Client$ClientBuilder",
+        "object_id": 1280107194,
+        "value": "Client.ClientBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000046554,
+      "event": "return",
+      "id": 20,
+      "parent_id": 19,
+      "return_value": {
+        "class": "com.gml.domain.model.Client",
+        "object_id": 1305397741,
+        "value": "Client[sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0]"
+      },
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0001310138,
+      "event": "return",
+      "id": 21,
+      "parent_id": 4,
+      "return_value": {
+        "class": "com.gml.domain.model.Client",
+        "object_id": 1305397741,
+        "value": "Client[sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0]"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapperImpl",
+      "event": "call",
+      "id": 22,
+      "lineno": 65,
+      "method_id": "toGetClientResponse",
+      "parameters": [
+        {
+          "class": "com.gml.domain.model.Client",
+          "kind": "req",
+          "name": "client",
+          "object_id": 1305397741,
+          "value": "Client[sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0]"
+        }
+      ],
+      "path": "com/gml/infrastructure/adapters/inbound/rest/mapper/ClientRestMapperImpl.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapperImpl",
+        "object_id": 887562392,
+        "value": "com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapperImpl@34e72098"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 23,
+      "lineno": 7,
+      "method_id": "sharedKey",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "sharedKey",
+          "object_id": 486591074,
+          "value": "acano"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=null, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000066215,
+      "event": "return",
+      "id": 24,
+      "parent_id": 23,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=null, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 25,
+      "lineno": 7,
+      "method_id": "bussinessId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "bussinessId",
+          "object_id": 648281948,
+          "value": "adolfo a cano"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000042707,
+      "event": "return",
+      "id": 26,
+      "parent_id": 25,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=null, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 27,
+      "lineno": 7,
+      "method_id": "email",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "email",
+          "object_id": 988336009,
+          "value": "adolfoano@domain.com"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=null, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000046997,
+      "event": "return",
+      "id": 28,
+      "parent_id": 27,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=null, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 29,
+      "lineno": 7,
+      "method_id": "phone",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "phone",
+          "object_id": 1125616637,
+          "value": "adolfo"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=null, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000042739,
+      "event": "return",
+      "id": 30,
+      "parent_id": 29,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=null, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 31,
+      "lineno": 7,
+      "method_id": "added",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "added",
+          "object_id": 1108983926,
+          "value": "2024-05-22 10:48:29.763"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=null, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000042447,
+      "event": "return",
+      "id": 32,
+      "parent_id": 31,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=null, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 33,
+      "lineno": 7,
+      "method_id": "started",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "started",
+          "object_id": 255657283,
+          "value": "2024-05-24 19:00:00.0"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=null)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000043972,
+      "event": "return",
+      "id": 34,
+      "parent_id": 33,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=null)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 35,
+      "lineno": 7,
+      "method_id": "ended",
+      "parameters": [
+        {
+          "class": "java.sql.Timestamp",
+          "kind": "req",
+          "name": "ended",
+          "object_id": 1723641522,
+          "value": "2024-05-24 19:00:00.0"
+        }
+      ],
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000045621,
+      "event": "return",
+      "id": 36,
+      "parent_id": 35,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "thread_id": 204
+    },
+    {
+      "defined_class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+      "event": "call",
+      "id": 37,
+      "lineno": 7,
+      "method_id": "build",
+      "path": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java",
+      "receiver": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse$GetClientResponseBuilder",
+        "object_id": 640198711,
+        "value": "GetClientResponse.GetClientResponseBuilder(sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0)"
+      },
+      "static": false,
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000049796,
+      "event": "return",
+      "id": 38,
+      "parent_id": 37,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse",
+        "object_id": 627198846,
+        "value": "GetClientResponse[sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0]"
+      },
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0000914442,
+      "event": "return",
+      "id": 39,
+      "parent_id": 22,
+      "return_value": {
+        "class": "com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse",
+        "object_id": 627198846,
+        "value": "GetClientResponse[sharedKey=acano, bussinessId=adolfo a cano, email=adolfoano@domain.com, phone=adolfo, added=2024-05-22 10:48:29.763, started=2024-05-24 19:00:00.0, ended=2024-05-24 19:00:00.0]"
+      },
+      "thread_id": 204
+    },
+    {
+      "elapsed": 0.0010066977,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive",
+          "Vary": "Origin",
+          "Date": "Wed, 22 May 2024 15:48:36 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 40,
+      "parent_id": 1,
+      "thread_id": 204
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /v1/client (200) - 10:48:36.199",
+    "app": "Clients",
+    "language": {
+      "name": "java",
+      "version": "21.0.3+9-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:gustavosotocano/Clients.git",
+      "branch": "addjwt",
+      "commit": "db7135fd6f99d064d590aa55b4aabbb8626f5aff"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "bussinessId",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "added",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "ended",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "build",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "phone",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "started",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "sharedKey",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        },
+                        {
+                          "name": "email",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/com/gml/domain/model/Client.java:9"
+                        }
+                      ],
+                      "name": "Client$ClientBuilder",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "model",
+                  "type": "package"
+                }
+              ],
+              "name": "domain",
+              "type": "package"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "name": "build",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "started",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "email",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "added",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "bussinessId",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "sharedKey",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "ended",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    },
+                                    {
+                                      "name": "phone",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "src/main/java/com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse.java:7"
+                                    }
+                                  ],
+                                  "name": "GetClientResponse$GetClientResponseBuilder",
+                                  "type": "class"
+                                }
+                              ],
+                              "name": "response",
+                              "type": "package"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "name": "toGetClientResponse",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "com/gml/infrastructure/adapters/inbound/rest/mapper/ClientRestMapperImpl.java:65"
+                                    }
+                                  ],
+                                  "name": "ClientRestMapperImpl",
+                                  "type": "class"
+                                }
+                              ],
+                              "name": "mapper",
+                              "type": "package"
+                            }
+                          ],
+                          "name": "rest",
+                          "type": "package"
+                        }
+                      ],
+                      "name": "inbound",
+                      "type": "package"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "name": "toModel",
+                                      "type": "function",
+                                      "static": false,
+                                      "location": "com/gml/infrastructure/adapters/outbound/persistence/mapper/ClientPersistenceMapperImpl.java:35"
+                                    }
+                                  ],
+                                  "name": "ClientPersistenceMapperImpl",
+                                  "type": "class"
+                                }
+                              ],
+                              "name": "mapper",
+                              "type": "package"
+                            }
+                          ],
+                          "name": "persistence",
+                          "type": "package"
+                        }
+                      ],
+                      "name": "outbound",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "adapters",
+                  "type": "package"
+                }
+              ],
+              "name": "infrastructure",
+              "type": "package"
+            }
+          ],
+          "name": "gml",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /v1/client"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select ce1_0.shared_key,ce1_0.added,ce1_0.bussiness_id,ce1_0.email,ce1_0.ended,ce1_0.phone,ce1_0.started,ce1_0.updated from client ce1_0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "188",
+          "postman-token": "10ad5bc3-4181-4fca-8797-8279b92e5225",
+          "host": "localhost:8090",
+          "content-type": "application/json",
+          "connection": "keep-alive",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.39.0",
+          "accept": "*/*"
+        },
+        "path_info": "/v1/client",
+        "protocol": "HTTP/1.1",
+        "request_method": "PUT"
+      },
+      "id": 1,
+      "thread_id": 206
+    },
+    {
+      "elapsed": 0.000334119,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Allow": "GET, POST"
+        },
+        "status": 405
+      },
+      "id": 2,
+      "parent_id": 1,
+      "thread_id": 206
+    },
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "188",
+          "postman-token": "10ad5bc3-4181-4fca-8797-8279b92e5225",
+          "host": "localhost:8090",
+          "content-type": "application/json",
+          "connection": "keep-alive",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.39.0",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/error",
+        "path_info": "/error",
+        "protocol": "HTTP/1.1",
+        "request_method": "PUT"
+      },
+      "id": 3,
+      "thread_id": 206
+    },
+    {
+      "elapsed": 0.0010468551,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive",
+          "Date": "Wed, 22 May 2024 15:48:50 GMT",
+          "Allow": "GET, POST",
+          "Content-Type": "application/json"
+        },
+        "status": 405
+      },
+      "id": 4,
+      "parent_id": 3,
+      "thread_id": 206
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "PUT /v1/client (405) - 10:48:50.094",
+    "app": "Clients",
+    "language": {
+      "name": "java",
+      "version": "21.0.3+9-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:gustavosotocano/Clients.git",
+      "branch": "addjwt",
+      "commit": "db7135fd6f99d064d590aa55b4aabbb8626f5aff"
+    }
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "PUT /v1/client"
+        },
+        {
+          "type": "route",
+          "name": "PUT /error"
+        }
+      ]
+    }
+  ]
+}

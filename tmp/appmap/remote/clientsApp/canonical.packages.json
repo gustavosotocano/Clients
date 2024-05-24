@@ -1,0 +1,12 @@
+[
+  "com/gml/domain/annotation",
+  "com/gml/domain/implementation",
+  "com/gml/domain/model",
+  "com/gml/infrastructure/adapters/inbound/rest",
+  "com/gml/infrastructure/adapters/inbound/rest/mapper",
+  "com/gml/infrastructure/adapters/inbound/rest/response",
+  "com/gml/infrastructure/adapters/outbound/persistence",
+  "com/gml/infrastructure/adapters/outbound/persistence/entity",
+  "com/gml/infrastructure/adapters/outbound/persistence/mapper",
+  "com/gml/infrastructure/adapters/outbound/persistence/repository"
+]

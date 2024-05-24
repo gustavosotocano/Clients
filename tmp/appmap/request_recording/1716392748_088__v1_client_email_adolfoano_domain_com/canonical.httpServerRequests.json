@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /v1/client/email/{email}",
+    "parameters": "()",
+    "status": 200
+  }
+]

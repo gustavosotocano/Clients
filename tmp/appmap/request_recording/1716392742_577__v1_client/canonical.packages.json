@@ -1,0 +1,6 @@
+[
+  "com/gml/domain/model",
+  "com/gml/infrastructure/adapters/inbound/rest/mapper",
+  "com/gml/infrastructure/adapters/inbound/rest/response",
+  "com/gml/infrastructure/adapters/outbound/persistence/mapper"
+]

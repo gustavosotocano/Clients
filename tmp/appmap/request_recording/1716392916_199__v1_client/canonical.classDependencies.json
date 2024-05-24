@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "GET /v1/client",
+    "callee": "com/gml"
+  },
+  {
+    "caller": "GET /v1/client",
+    "callee": "select ce1_0.shared_key,ce1_0.added,ce1_0.bussiness_id,ce1_0.email,ce1_0.ended,ce1_0.phone,ce1_0.started,ce1_0.updated from client ce1_0"
+  }
+]

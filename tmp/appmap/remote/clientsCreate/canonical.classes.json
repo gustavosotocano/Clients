@@ -1,0 +1,13 @@
+[
+  "com/gml/domain/annotation/UniqueEmailValidator",
+  "com/gml/domain/implementation/CreateClientUseCaseImpl",
+  "com/gml/domain/implementation/GetClientUseCaseImpl",
+  "com/gml/domain/model/Client$ClientBuilder",
+  "com/gml/infrastructure/adapters/inbound/rest/ClientRestAdapter",
+  "com/gml/infrastructure/adapters/inbound/rest/mapper/ClientRestMapperImpl",
+  "com/gml/infrastructure/adapters/outbound/persistence/ClientPersistenceAdapter",
+  "com/gml/infrastructure/adapters/outbound/persistence/entity/ClientEntity",
+  "com/gml/infrastructure/adapters/outbound/persistence/entity/ClientEntity$ClientEntityBuilder",
+  "com/gml/infrastructure/adapters/outbound/persistence/mapper/ClientPersistenceMapperImpl",
+  "com/gml/infrastructure/adapters/outbound/persistence/repository/ClientRepository"
+]

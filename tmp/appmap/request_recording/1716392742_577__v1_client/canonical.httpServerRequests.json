@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /v1/client",
+    "parameters": "()",
+    "status": 200
+  }
+]
