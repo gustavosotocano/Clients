@@ -3,6 +3,7 @@ package com.gml.infrastructure.adapters.binding;
 import com.gml.domain.implementation.CreateClientUseCaseImpl;
 
 import com.gml.domain.implementation.GetClientUseCaseImpl;
+import com.gml.domain.implementation.UpdateClientUseCaseImpl;
 import com.gml.infrastructure.adapters.outbound.persistence.ClientPersistenceAdapter;
 import com.gml.infrastructure.adapters.outbound.persistence.repository.ClientRepository;
 
@@ -27,5 +28,9 @@ public class BeanBinder {
         return new GetClientUseCaseImpl(clientPersistenceAdapter);
     }
 
+    @Bean
+    public UpdateClientUseCaseImpl updateClientUseCaseImpl(ClientPersistenceAdapter clientPersistenceAdapter) {
+        return new UpdateClientUseCaseImpl(clientPersistenceAdapter);
+    }
 
 }

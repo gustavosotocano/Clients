@@ -1,0 +1,10 @@
+<div>
+  <h1>JSON to CSV Converter</h1>
+  <textarea [(ngModel)]="jsonInput" rows="10" cols="50" [hidden]=true placeholder="Enter JSON here"></textarea>
+  <br>
+  <button (click)="convertJsonToCsv()">Convert to CSV</button>
+  <br>
+  <textarea [(ngModel)]="csvOutput" rows="10" cols="50" [hidden]=true placeholder="CSV Export" readonly></textarea>
+  <br>
+  <button (click)="downloadCsv()" [hidden]=true [disabled]="!csvOutput">Download CSV</button>
+</div>
