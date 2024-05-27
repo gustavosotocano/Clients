@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /v1/client/id/{id}",
-    "parameters": "()",
-    "status": 200
-  }
-]

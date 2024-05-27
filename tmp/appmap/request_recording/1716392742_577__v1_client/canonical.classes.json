@@ -1,6 +1,0 @@
-[
-  "com/gml/domain/model/Client$ClientBuilder",
-  "com/gml/infrastructure/adapters/inbound/rest/mapper/ClientRestMapperImpl",
-  "com/gml/infrastructure/adapters/inbound/rest/response/GetClientResponse$GetClientResponseBuilder",
-  "com/gml/infrastructure/adapters/outbound/persistence/mapper/ClientPersistenceMapperImpl"
-]

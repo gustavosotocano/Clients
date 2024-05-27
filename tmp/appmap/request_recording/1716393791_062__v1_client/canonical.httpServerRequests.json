@@ -1,7 +1,0 @@
-[
-  {
-    "route": "POST /v1/client",
-    "parameters": "()",
-    "status": 201
-  }
-]
