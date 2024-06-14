@@ -6,9 +6,9 @@ import org.aspectj.lang.annotation.*;
 import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
+@Component
 @Aspect
 @Slf4j
-@Component
 public class LoggingAspect {
 
     @Pointcut("execution(* com.gml.controller.*.*(..))"+

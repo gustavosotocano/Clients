@@ -22,7 +22,7 @@ public class CreateClientUseCaseImpl implements CreateClientUseCase {
             throw new RequestException("004", "Client is already created");
         }
         */
-        String[] names = client.bussinessId().split(" ");
+        String[] names = client.businessId().split(" ");
         String lastName = "";
         if (names.length == 1) {
             lastName = names[0];
@@ -41,7 +41,7 @@ Client client1= Client.builder()
         .phone(client.phone())
         .started(client.started())
         .ended(client.ended())
-        .bussinessId(client.bussinessId())
+        .businessId(client.businessId())
         .build();
         return clientPersistencePort.saveClient(client1);
     }

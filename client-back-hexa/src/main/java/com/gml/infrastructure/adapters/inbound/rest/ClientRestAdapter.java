@@ -6,6 +6,7 @@ import com.gml.application.port.inbound.UpdateClientUseCase;
 import com.gml.domain.model.Client;
 import com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapper;
 
+import com.gml.infrastructure.adapters.inbound.rest.request.ClientRequestPut;
 import com.gml.infrastructure.adapters.inbound.rest.request.CreateClientRequest;
 import com.gml.infrastructure.adapters.inbound.rest.response.CreateClientResponse;
 import com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse;
@@ -23,6 +24,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +40,7 @@ public class ClientRestAdapter {
     private final GetClientUseCase getClientUseCase;
     private final ClientRestMapper clientRestMapper = Mappers.getMapper(ClientRestMapper.class);
 
-    @PostMapping("/v1/client")
+    @PostMapping("/v1/clients")
     public ResponseEntity<CreateClientResponse> createClient(@Valid @RequestBody CreateClientRequest createClientRequest) {
 
         Client client = createClientUseCase.createClient(clientRestMapper.toModel(createClientRequest));
@@ -46,13 +48,23 @@ public class ClientRestAdapter {
         return new ResponseEntity<>(clientRestMapper.toCreateClientResponse(client), HttpStatus.CREATED);
     }
 
-    @PutMapping("/v1/client")
+/*
+    @PutMapping("/v1/clients")
     public ResponseEntity<CreateClientResponse> updateClient(@Valid @RequestBody CreateClientRequest createClientRequest) {
-
         Client client = updateClientUseCase.updateClient(clientRestMapper.toModel(createClientRequest));
+        return new ResponseEntity<>(clientRestMapper.toCreateClientResponse(client), HttpStatus.CREATED);
+    }
+*/
+
+    @PutMapping("/v1/clients/{sharedKey}")
+    public ResponseEntity<CreateClientResponse> update(@Valid @RequestBody ClientRequestPut clientRequestPut,
+                                                       @PathVariable String sharedKey) {
+
+        Client client = updateClientUseCase.updateClient(clientRequestPut,sharedKey);
 
         return new ResponseEntity<>(clientRestMapper.toCreateClientResponse(client), HttpStatus.CREATED);
     }
+
 
     @GetMapping(value = "/v1/client/sharedKey/{sharedKey}")
     public ResponseEntity<GetClientResponse> getClientById(@PathVariable String sharedKey) {

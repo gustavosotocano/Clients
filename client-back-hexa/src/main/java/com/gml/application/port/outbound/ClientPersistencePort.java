@@ -9,10 +9,10 @@ import java.util.Optional;
 public interface ClientPersistencePort {
 
     Client saveClient(Client client);
-    Client updateClient(Client client);
+    Client updateClient(Client client,String sharedKey);
 
     Optional<Client> findByEmail(String email);
-    Optional<Client> getClientById(String eMail);
+    Optional<Client> getClientById(String sharedKey);
 
     List<Client> getClientByAll();
 }

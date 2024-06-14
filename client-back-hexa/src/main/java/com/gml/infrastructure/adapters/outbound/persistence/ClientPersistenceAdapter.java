@@ -30,7 +30,8 @@ public class ClientPersistenceAdapter implements ClientPersistencePort {
 
     @Override
     public Optional<Client> getClientById(String id) {
-        return clientRepository.findById(id).map(clientPersistenceMapper::toModel);
+        return clientRepository.findById(id)
+                .map(clientPersistenceMapper::toModel);
     }
 
     @Override
@@ -44,12 +45,12 @@ public class ClientPersistenceAdapter implements ClientPersistencePort {
         return clientRepository.findByEmail(email).map(clientPersistenceMapper::toModel);
     }
     @Override
-    public Client updateClient(Client client) {
+    public Client updateClient(Client client,String smartKey) {
 
-        ClientEntity existingEntity = clientRepository.findById(client.sharedKey())
+        ClientEntity existingEntity = clientRepository.findById(smartKey)
                 .orElseThrow(() -> new EntityNotFoundException("Client not found"));
 
-        existingEntity.setBussinessId(client.bussinessId());
+        existingEntity.setBusinessId(client.businessId());
         existingEntity.setPhone(client.phone());
 
         existingEntity.setStarted(client.started());

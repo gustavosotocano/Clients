@@ -1,10 +1,10 @@
-package com.gml;
+package com.gas.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClientApplicationTests {
+class ClientsWebFluxApplicationTests {
 
 	@Test
 	void contextLoads() {

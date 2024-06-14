@@ -34,7 +34,6 @@ public class Utils {
 
     public static ClienteDto toClientDto(Client client) {
 
-
         return ClienteDto.builder()
                 .sharedKey(client.getSharedKey())
                 .bussinessId(client.getBussinessId())
@@ -43,7 +42,6 @@ public class Utils {
                 .added(changeFormatDate(client.getAdded()))
                 .started(changeFormatDate(client.getStarted()))
                 .ended(client.getEnded())
-
                 .build();
     }
 

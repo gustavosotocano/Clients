@@ -1,23 +1,15 @@
 package com.gml;
 
-import com.gml.entity.Client;
-import com.gml.repository.ClientJpaRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
-import java.util.Date;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy(exposeProxy = true)
-public class ClientApplication {
+public class ClientApplicationHexa {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClientApplication.class, args);
+		SpringApplication.run(ClientApplicationHexa.class, args);
 	}
 /*
 	@Bean

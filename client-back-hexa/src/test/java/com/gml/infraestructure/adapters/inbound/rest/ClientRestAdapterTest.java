@@ -10,7 +10,6 @@ import com.gml.infraestructure.adapters.inbound.rest.testobjectmother.GetClientR
 import com.gml.infrastructure.adapters.inbound.rest.ClientRestAdapter;
 import com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapper;
 import com.gml.infrastructure.adapters.inbound.rest.response.CreateClientResponse;
-
 import com.gml.infrastructure.adapters.inbound.rest.response.GetClientResponse;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
@@ -23,13 +22,14 @@ import static org.mockito.Mockito.*;
 
 public class ClientRestAdapterTest {
 
+    private static final String SHARED_KEY = "rtert";
     private final CreateClientUseCase createFruitUseCase = mock(CreateClientUseCase.class);
     private final GetClientUseCase getClientUseCase = mock(GetClientUseCase.class);
-    private final UpdateClientUseCase updateClientUseCase= mock(UpdateClientUseCase.class);
-
-    private final ClientRestAdapter clientRestAdapterTest = new ClientRestAdapter(createFruitUseCase,updateClientUseCase, getClientUseCase);
+    private final UpdateClientUseCase updateClientUseCase = mock(UpdateClientUseCase.class);
+    private final ClientRestAdapter clientRestAdapterTest = new ClientRestAdapter(createFruitUseCase,
+                                                                                  updateClientUseCase,
+                                                                                  getClientUseCase);
     private final ClientRestMapper fruitRestMapper = Mappers.getMapper(ClientRestMapper.class);
-    private static final String SHARED_KEY="rtert";
 
     @Test
     public void createClientTest() {
@@ -38,7 +38,8 @@ public class ClientRestAdapterTest {
                 .thenReturn(ClientTestObjectMother.aClient());
 
         //WHEN
-        ResponseEntity<CreateClientResponse> testResponse = clientRestAdapterTest.createClient(CreateClientRequestTestObjectMother.aCreateClientRequest());
+        ResponseEntity<CreateClientResponse> testResponse =
+                clientRestAdapterTest.createClient(CreateClientRequestTestObjectMother.aCreateClientRequest());
 
         //THEN
         verify(createFruitUseCase, times(1))

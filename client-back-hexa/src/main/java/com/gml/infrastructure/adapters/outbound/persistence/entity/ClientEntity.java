@@ -13,16 +13,16 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 @Builder
 public class ClientEntity {
     @Id
     private String sharedKey;
+    private String businessId;
     private String email;
     private String phone;
     private Date added;
     private Date started;
     private Date ended;
-    private String bussinessId;
     private Date updated;
 }

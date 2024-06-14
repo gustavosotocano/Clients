@@ -8,7 +8,7 @@ import java.util.Date;
 @Builder
 public record CreateClientRequest (
 
-        String sharedKey,
+
         @NotNull(message = "It must not be null")
         String bussinessId,
 
