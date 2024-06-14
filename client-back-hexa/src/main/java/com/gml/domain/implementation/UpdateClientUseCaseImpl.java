@@ -7,8 +7,6 @@ import com.gml.domain.model.Client;
 import com.gml.infrastructure.adapters.inbound.rest.request.ClientRequestPut;
 import lombok.AllArgsConstructor;
 
-import java.util.Date;
-
 @AllArgsConstructor
 public class UpdateClientUseCaseImpl implements UpdateClientUseCase {
 

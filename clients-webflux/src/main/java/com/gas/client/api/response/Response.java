@@ -1,14 +1,12 @@
 package com.gas.client.api.response;
 
- import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 import org.springframework.http.HttpStatus;
-
-import java.util.Date;
 
 @Getter
 @Setter
