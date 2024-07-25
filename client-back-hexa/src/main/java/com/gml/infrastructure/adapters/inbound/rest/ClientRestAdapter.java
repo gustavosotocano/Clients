@@ -5,7 +5,6 @@ import com.gml.application.port.inbound.GetClientUseCase;
 import com.gml.application.port.inbound.UpdateClientUseCase;
 import com.gml.domain.model.Client;
 import com.gml.infrastructure.adapters.inbound.rest.mapper.ClientRestMapper;
-
 import com.gml.infrastructure.adapters.inbound.rest.request.ClientRequestPut;
 import com.gml.infrastructure.adapters.inbound.rest.request.CreateClientRequest;
 import com.gml.infrastructure.adapters.inbound.rest.response.CreateClientResponse;
@@ -24,7 +23,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -50,7 +48,8 @@ public class ClientRestAdapter {
 
 /*
     @PutMapping("/v1/clients")
-    public ResponseEntity<CreateClientResponse> updateClient(@Valid @RequestBody CreateClientRequest createClientRequest) {
+    public ResponseEntity<CreateClientResponse> updateClient(@Valid @RequestBody CreateClientRequest
+    createClientRequest) {
         Client client = updateClientUseCase.updateClient(clientRestMapper.toModel(createClientRequest));
         return new ResponseEntity<>(clientRestMapper.toCreateClientResponse(client), HttpStatus.CREATED);
     }
@@ -60,7 +59,7 @@ public class ClientRestAdapter {
     public ResponseEntity<CreateClientResponse> update(@Valid @RequestBody ClientRequestPut clientRequestPut,
                                                        @PathVariable String sharedKey) {
 
-        Client client = updateClientUseCase.updateClient(clientRequestPut,sharedKey);
+        Client client = updateClientUseCase.updateClient(clientRequestPut, sharedKey);
 
         return new ResponseEntity<>(clientRestMapper.toCreateClientResponse(client), HttpStatus.CREATED);
     }
@@ -71,22 +70,26 @@ public class ClientRestAdapter {
         Client client = getClientUseCase.getClientById(sharedKey);
         return new ResponseEntity<>(clientRestMapper.toGetClientResponse(client), HttpStatus.OK);
     }
+
     @GetMapping(value = "/v1/client")
     public ResponseEntity<List<GetClientResponse>> getClients() {
         List<Client> clients = getClientUseCase.getClientByAll();
-        var client=clients.stream().map(clientRestMapper::toGetClientResponse).toList();
+        var client = clients.stream().map(clientRestMapper::toGetClientResponse).toList();
 
-        return new ResponseEntity<>( client, HttpStatus.OK);
+        return new ResponseEntity<>(client, HttpStatus.OK);
     }
+
     @GetMapping(value = "/v1/client/email/{email}")
     public ResponseEntity<List<GetClientResponse>> getMail(@PathVariable String email) {
         Optional<Client> clients = getClientUseCase.getClientByEmail(email);
-        var client=clients.stream().map(clientRestMapper::toGetClientResponse).toList();
+        var client = clients.stream().map(clientRestMapper::toGetClientResponse).toList();
 
-        return new ResponseEntity<>( client, HttpStatus.OK);
+        return new ResponseEntity<>(client, HttpStatus.OK);
     }
+
     @GetMapping("/v1/exportCSV")
-    public void exportCSV(HttpServletResponse response) throws CsvDataTypeMismatchException, CsvRequiredFieldEmptyException, IOException {
+    public void exportCSV(HttpServletResponse response) throws CsvDataTypeMismatchException,
+            CsvRequiredFieldEmptyException, IOException {
         String fileName = "employee-data.csv";
 
         response.setContentType("text/csv");
